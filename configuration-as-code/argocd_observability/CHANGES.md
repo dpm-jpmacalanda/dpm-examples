@@ -57,21 +57,21 @@ Notes:
 - Apps with several application containers: `argocd.app.image` and the tag describe the first one; the full list stays in `argocd.app.images`.
 - Multi-source Applications (`spec.sources`) are not handled; the source fields stay empty for them.
 
-### 3. New dashboard "ArgoCD Applications and Versions"
+### 3. Dashboard "ArgoCD Application Lifecycle" extended
 
-`argocd_observability/document-dashboard/argocd_app_versions.json` (config ID `argocd_app_versions`):
+`argocd_observability/document-dashboard/argocd_app_lifecycle_observability.json`:
 
-- Summary: applications managed, apps with a known version, apps waiting for promotion (Suspended), deployments in 7 days
-- Current version per application (image tag, stage, outcome, last deployed, deployed by, Git revision, image, parent app)
-- All applications with health and sync (Argo CD metrics) and their version (SDLC events); apps without events show "not subscribed"
-- Apps waiting for promotion (health Suspended, typically blue-green rollouts)
-- Version history (last 200 finished deployments, 30 days)
+- "Last Application Sync Operation": adds Version and DeployedBy
+- "Finished deployments | last 20": adds Version, DeployedBy, DeploymentNo, PreviousRev, Image, Stage, Parent, ChartPath, AppURL and Resources
+- "Last Failed Operation States": adds version and initiator, and passes them to the CoPilot prompt context
+- New section "Versions and Releases": current version per application; all applications with health, sync and version (apps without events show "not subscribed"); apps waiting for promotion (Suspended); deployments by initiator; version history
+- About text points to the current upstream location and this fork
 
-The two upstream dashboards are unchanged.
+The "ArgoCD Platform Observability" dashboard is unchanged.
 
 ## Unchanged
 
-Pipeline ID, ingest source (`/platform/ingest/custom/events.sdlc/argocd`), the two upstream dashboards, manifest.
+Pipeline ID, ingest source (`/platform/ingest/custom/events.sdlc/argocd`), the Platform Observability dashboard, manifest.
 Redeploying this project over an existing upstream deployment updates the same pipeline in place;
 the Argo CD side needs no change. Processors added manually in the UI to this pipeline are replaced.
 

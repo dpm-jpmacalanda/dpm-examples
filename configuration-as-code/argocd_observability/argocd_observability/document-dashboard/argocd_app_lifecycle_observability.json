@@ -78,7 +78,7 @@
       "h": 9,
       "w": 24,
       "x": 0,
-      "y": 37
+      "y": 62
     },
     "15": {
       "h": 2,
@@ -121,6 +121,42 @@
       "w": 12,
       "x": 8,
       "y": 10
+    },
+    "30": {
+      "h": 2,
+      "w": 24,
+      "x": 0,
+      "y": 37
+    },
+    "31": {
+      "h": 7,
+      "w": 24,
+      "x": 0,
+      "y": 39
+    },
+    "32": {
+      "h": 8,
+      "w": 16,
+      "x": 0,
+      "y": 46
+    },
+    "33": {
+      "h": 8,
+      "w": 8,
+      "x": 16,
+      "y": 46
+    },
+    "35": {
+      "h": 8,
+      "w": 16,
+      "x": 0,
+      "y": 54
+    },
+    "34": {
+      "h": 8,
+      "w": 8,
+      "x": 16,
+      "y": 54
     }
   },
   "settings": {},
@@ -155,88 +191,7 @@
       "type": "data",
       "visualization": "table",
       "visualizationSettings": {
-        "autoSelectVisualization": false,
-        "coloring": {
-          "colorRules": [
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-color-03-default, #2a7453)"
-              },
-              "field": "Health",
-              "value": "Healthy"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
-              },
-              "field": "Health",
-              "value": "Progressing"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              },
-              "field": "Health",
-              "value": "Degraded"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              },
-              "field": "Health",
-              "value": "Missing"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              },
-              "field": "Health",
-              "value": "Unknown"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-color-03-default, #2a7453)"
-              },
-              "field": "Sync",
-              "value": "Synced"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
-              },
-              "field": "Sync",
-              "value": "OutOfSync"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": "#AE132D",
-              "field": "Sync",
-              "value": "Unknown"
-            }
-          ]
-        },
         "table": {
-          "colorThresholdTarget": "background",
-          "columnWidths": {
-            "[\"Health\"]": 148.58,
-            "[\"Name\"]": 387,
-            "[\"Sync\"]": 96
-          },
           "hiddenColumns": [
             [
               "timeframe"
@@ -257,6 +212,8 @@
               "argocd_app_info"
             ]
           ],
+          "linewrapEnabled": true,
+          "rowDensity": "default",
           "lineWrapIds": [
             [
               "Name"
@@ -265,20 +222,146 @@
               "Health"
             ]
           ],
-          "linewrapEnabled": true,
-          "rowDensity": "default",
-          "selectedColumnForRowThreshold": "Sync"
+          "columnWidths": {
+            "[\"Health\"]": 148.58,
+            "[\"Name\"]": 387,
+            "[\"Sync\"]": 96
+          }
         },
+        "coloring": {
+          "colorRules": [
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-03-default, #2a7453)"
+              },
+              "field": "Health",
+              "value": "Healthy",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Health"
+                ]
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
+              },
+              "field": "Health",
+              "value": "Progressing",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Health"
+                ]
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
+              },
+              "field": "Health",
+              "value": "Degraded",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Health"
+                ]
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
+              },
+              "field": "Health",
+              "value": "Missing",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Health"
+                ]
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
+              },
+              "field": "Health",
+              "value": "Unknown",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Health"
+                ]
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-03-default, #2a7453)"
+              },
+              "field": "Sync",
+              "value": "Synced",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Sync"
+                ]
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
+              },
+              "field": "Sync",
+              "value": "OutOfSync",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Sync"
+                ]
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": "#AE132D",
+              "field": "Sync",
+              "value": "Unknown",
+              "metadata": {
+                "applyTo": "cell",
+                "fields": [
+                  "Sync"
+                ]
+              }
+            }
+          ]
+        },
+        "autoSelectVisualization": false,
         "unitsOverrides": [
           {
-            "added": 0,
+            "identifier": "argocd_app_info",
+            "unitCategory": "unspecified",
             "baseUnit": "unspecified",
             "decimals": 0,
-            "delimiter": false,
-            "id": "argocd_app_info",
-            "identifier": "argocd_app_info",
             "suffix": "",
-            "unitCategory": "unspecified"
+            "delimiter": false,
+            "cascade": null,
+            "added": 0,
+            "id": "argocd_app_info"
           }
         ]
       }
@@ -290,7 +373,7 @@
         },
         "enabled": false
       },
-      "query": "fetch events | filter event.provider == \"argocd\" \n| filter isNotNull(argocd.app.reconciliation.time)\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project)\n| dedup {cicd.deployment.name, cicd.deployment.namespace}, sort:{argocd.app.reconciliation.time desc}\n| fields AppName= cicd.deployment.name, Namespace = cicd.deployment.namespace , Status = task.outcome ,SyncToRev = vcs.ref.base.revision,TimeFromLastSync = toTimestamp(now()) - ToTimestamp(end_time), Started = start_time, Ended = end_time\n| sort AppName asc\n\n",
+      "query": "fetch events | filter event.provider == \"argocd\" \n| filter isNotNull(argocd.app.reconciliation.time)\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project)\n| dedup {cicd.deployment.name, cicd.deployment.namespace}, sort:{argocd.app.reconciliation.time desc}\n| fields AppName= cicd.deployment.name, Version = argocd.app.version, Namespace = cicd.deployment.namespace , Status = task.outcome , DeployedBy = argocd.sync.initiated_by, SyncToRev = vcs.ref.base.revision,TimeFromLastSync = toTimestamp(now()) - ToTimestamp(end_time), Started = start_time, Ended = end_time\n| sort AppName asc\n\n",
       "querySettings": {
         "defaultSamplingRatio": 10,
         "defaultScanLimitGbytes": 500,
@@ -309,55 +392,7 @@
       "type": "data",
       "visualization": "table",
       "visualizationSettings": {
-        "autoSelectVisualization": false,
-        "coloring": {
-          "colorRules": [
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-status-ideal-default, #2f6863)"
-              },
-              "field": "Status",
-              "value": "succeeded"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-status-warning-default, #eca440)"
-              },
-              "field": "Status",
-              "value": "running"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
-              },
-              "field": "Status",
-              "value": "failed"
-            },
-            {
-              "colorMode": "custom-color",
-              "comparator": "=",
-              "customColor": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              },
-              "field": "Status",
-              "value": "error"
-            }
-          ]
-        },
         "table": {
-          "columnWidths": {
-            "[\"Ended\"]": 347.6875,
-            "[\"Started\"]": 277.6875,
-            "[\"Status\"]": 148.0859375,
-            "[\"SyncToRev\"]": 409.8671875
-          },
-          "enableThresholdInRow": true,
           "monospacedFontColumns": [
             [
               "AppName"
@@ -379,11 +414,75 @@
             ],
             [
               "Ended"
+            ],
+            [
+              "Version"
+            ],
+            [
+              "DeployedBy"
             ]
           ],
           "rowDensity": "comfortable",
-          "selectedColumnForRowThreshold": "Status"
-        }
+          "columnWidths": {
+            "[\"Ended\"]": 347.6875,
+            "[\"Started\"]": 277.6875,
+            "[\"Status\"]": 148.0859375,
+            "[\"SyncToRev\"]": 409.8671875
+          }
+        },
+        "coloring": {
+          "colorRules": [
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-ideal-default, #2f6863)"
+              },
+              "field": "Status",
+              "value": "succeeded",
+              "metadata": {
+                "applyTo": "rowValues"
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-warning-default, #eca440)"
+              },
+              "field": "Status",
+              "value": "running",
+              "metadata": {
+                "applyTo": "rowValues"
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
+              },
+              "field": "Status",
+              "value": "failed",
+              "metadata": {
+                "applyTo": "rowValues"
+              }
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
+              },
+              "field": "Status",
+              "value": "error",
+              "metadata": {
+                "applyTo": "rowValues"
+              }
+            }
+          ]
+        },
+        "autoSelectVisualization": false
       }
     },
     "3": {
@@ -406,12 +505,9 @@
       "visualization": "singleValue",
       "visualizationSettings": {
         "autoSelectVisualization": false,
-        "coloring": {
-          "thresholdRules": []
-        },
         "singleValue": {
-          "label": "count()",
           "labelMode": "none",
+          "label": "count()",
           "recordField": "count()",
           "trend": {
             "isVisible": true
@@ -440,43 +536,26 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
-          "categoricalBarChartSettings": {
-            "categoryAxis": [
-              "task.outcome"
-            ],
-            "categoryAxisLabel": "task.outcome",
-            "valueAxis": [
-              "count()"
-            ],
-            "valueAxisLabel": "count()"
-          },
-          "categoryOverrides": {
-            "error": {
-              "added": 6822197,
-              "color": {
-                "Default": "var(--dt-colors-charts-security-risk-level-critical-default, #8a0012)"
-              }
-            },
-            "failed": {
-              "added": 583774.7000000179,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              }
-            },
-            "succeeded": {
-              "added": 591684,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-swamps-color-01-default, #006650)"
-              }
-            }
-          },
-          "circleChartSettings": {
-            "groupingThresholdType": "relative"
-          },
+          "truncationMode": "middle",
           "legend": {
             "hidden": true
           },
-          "truncationMode": "middle"
+          "categoricalBarChartSettings": {
+            "valueAxis": [
+              "count()"
+            ],
+            "valueAxisLabel": "count()",
+            "categoryAxis": [
+              "task.outcome"
+            ],
+            "categoryAxisLabel": "task.outcome"
+          },
+          "circleChartSettings": {
+            "groupingThresholdType": "relative"
+          }
+        },
+        "legend": {
+          "ratio": 49
         },
         "coloring": {
           "colorRules": [
@@ -518,11 +597,7 @@
               "type": "string",
               "value": "succeeded"
             }
-          ],
-          "thresholdRules": []
-        },
-        "legend": {
-          "ratio": 49
+          ]
         }
       }
     },
@@ -558,49 +633,26 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
-          "categoricalBarChartSettings": {
-            "categoryAxis": [
-              "Health"
-            ],
-            "categoryAxisLabel": "Health",
-            "valueAxis": [
-              "count()"
-            ],
-            "valueAxisLabel": "count()"
-          },
-          "categoryOverrides": {
-            "Degraded": {
-              "added": 1477996.300000012,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              }
-            },
-            "Healthy": {
-              "added": 1968419.6000000238,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-swamps-color-01-default, #006650)"
-              }
-            },
-            "Missing": {
-              "added": 1484196.5,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-color-05-default, #84859a)"
-              }
-            },
-            "Progressing": {
-              "added": 1492732.900000006,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
-              }
-            }
-          },
-          "circleChartSettings": {
-            "groupingThresholdType": "relative"
-          },
+          "truncationMode": "middle",
           "legend": {
             "hidden": true
           },
-          "truncationMode": "middle"
+          "categoricalBarChartSettings": {
+            "valueAxis": [
+              "count()"
+            ],
+            "valueAxisLabel": "count()",
+            "categoryAxis": [
+              "Health"
+            ],
+            "categoryAxisLabel": "Health"
+          },
+          "circleChartSettings": {
+            "groupingThresholdType": "relative"
+          }
+        },
+        "legend": {
+          "ratio": 43
         },
         "coloring": {
           "colorRules": [
@@ -652,22 +704,19 @@
               "type": "string",
               "value": "Progressing"
             }
-          ],
-          "thresholdRules": []
-        },
-        "legend": {
-          "ratio": 43
+          ]
         },
         "unitsOverrides": [
           {
-            "added": 0,
+            "identifier": "argocd_app_info",
+            "unitCategory": "unspecified",
             "baseUnit": "unspecified",
             "decimals": 0,
-            "delimiter": false,
-            "id": "argocd_app_info",
-            "identifier": "argocd_app_info",
             "suffix": "",
-            "unitCategory": "unspecified"
+            "delimiter": false,
+            "cascade": null,
+            "added": 0,
+            "id": "argocd_app_info"
           }
         ]
       }
@@ -704,43 +753,23 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
-          "categoricalBarChartSettings": {
-            "categoryAxis": [
-              "Sync"
-            ],
-            "categoryAxisLabel": "Sync",
-            "valueAxis": [
-              "count()"
-            ],
-            "valueAxisLabel": "count()"
-          },
-          "categoryOverrides": {
-            "OutOfSync": {
-              "added": 1477996.300000012,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
-              }
-            },
-            "Progressing": {
-              "added": 1492732.900000006,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
-              }
-            },
-            "Synced": {
-              "added": 1484196.5,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-swamps-color-01-default, #006650)"
-              }
-            }
-          },
-          "circleChartSettings": {
-            "groupingThresholdType": "relative"
-          },
+          "truncationMode": "middle",
           "legend": {
             "hidden": true
           },
-          "truncationMode": "middle"
+          "categoricalBarChartSettings": {
+            "valueAxis": [
+              "count()"
+            ],
+            "valueAxisLabel": "count()",
+            "categoryAxis": [
+              "Sync"
+            ],
+            "categoryAxisLabel": "Sync"
+          },
+          "circleChartSettings": {
+            "groupingThresholdType": "relative"
+          }
         },
         "coloring": {
           "colorRules": [
@@ -782,19 +811,19 @@
               "type": "string",
               "value": "Synced"
             }
-          ],
-          "thresholdRules": []
+          ]
         },
         "unitsOverrides": [
           {
-            "added": 0,
+            "identifier": "argocd_app_info",
+            "unitCategory": "unspecified",
             "baseUnit": "unspecified",
             "decimals": 0,
-            "delimiter": false,
-            "id": "argocd_app_info",
-            "identifier": "argocd_app_info",
             "suffix": "",
-            "unitCategory": "unspecified"
+            "delimiter": false,
+            "cascade": null,
+            "added": 0,
+            "id": "argocd_app_info"
           }
         ]
       }
@@ -819,12 +848,9 @@
       "visualization": "singleValue",
       "visualizationSettings": {
         "autoSelectVisualization": false,
-        "coloring": {
-          "thresholdRules": []
-        },
         "singleValue": {
-          "label": "count()",
           "labelMode": "none",
+          "label": "count()",
           "recordField": "median(duration)",
           "trend": {
             "isVisible": true
@@ -832,14 +858,15 @@
         },
         "unitsOverrides": [
           {
-            "added": 1746545304593,
-            "baseUnit": "nanosecond",
-            "decimals": 1,
-            "delimiter": false,
-            "displayUnit": null,
             "identifier": "median(duration)",
+            "unitCategory": "time",
+            "baseUnit": "nanosecond",
+            "displayUnit": null,
+            "decimals": 1,
             "suffix": "",
-            "unitCategory": "time"
+            "delimiter": false,
+            "cascade": null,
+            "added": 1746545304593
           }
         ]
       }
@@ -864,12 +891,9 @@
       "visualization": "singleValue",
       "visualizationSettings": {
         "autoSelectVisualization": false,
-        "coloring": {
-          "thresholdRules": []
-        },
         "singleValue": {
-          "label": "count()",
           "labelMode": "none",
+          "label": "count()",
           "recordField": "percentile(duration, 90)",
           "trend": {
             "isVisible": true
@@ -877,14 +901,15 @@
         },
         "unitsOverrides": [
           {
-            "added": 1746542863767,
-            "baseUnit": "nanosecond",
-            "decimals": 1,
-            "delimiter": false,
-            "displayUnit": null,
             "identifier": "percentile(duration, 90)",
+            "unitCategory": "time",
+            "baseUnit": "nanosecond",
+            "displayUnit": null,
+            "decimals": 1,
             "suffix": "",
-            "unitCategory": "time"
+            "delimiter": false,
+            "cascade": null,
+            "added": 1746542863767
           }
         ]
       }
@@ -910,31 +935,17 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
+          "truncationMode": "middle",
           "categoricalBarChartSettings": {
+            "categoryAxisLabel": "cicd.deployment.name",
             "categoryAxis": [
               "cicd.deployment.name"
             ],
-            "categoryAxisLabel": "cicd.deployment.name",
             "valueAxis": [
               "Count"
             ],
             "valueAxisLabel": "Count"
-          },
-          "categoryOverrides": {
-            "failed": {
-              "added": 583774.7000000179,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              }
-            },
-            "succeeded": {
-              "added": 591684,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-swamps-color-01-default, #006650)"
-              }
-            }
-          },
-          "truncationMode": "middle"
+          }
         },
         "coloring": {
           "colorRules": [
@@ -966,8 +977,7 @@
               "type": "string",
               "value": "succeeded"
             }
-          ],
-          "thresholdRules": []
+          ]
         }
       }
     },
@@ -995,6 +1005,14 @@
       "visualization": "singleValue",
       "visualizationSettings": {
         "autoSelectVisualization": false,
+        "singleValue": {
+          "labelMode": "none",
+          "label": "Error rate",
+          "recordField": "errorRate",
+          "trend": {
+            "isVisible": true
+          }
+        },
         "coloring": {
           "colorRules": [
             {
@@ -1017,24 +1035,17 @@
             }
           ]
         },
-        "singleValue": {
-          "label": "Error rate",
-          "labelMode": "none",
-          "recordField": "errorRate",
-          "trend": {
-            "isVisible": true
-          }
-        },
         "unitsOverrides": [
           {
-            "added": 1746458190343,
-            "baseUnit": "percent",
-            "decimals": 2,
-            "delimiter": false,
-            "displayUnit": null,
             "identifier": "errorRate",
+            "unitCategory": "percentage",
+            "baseUnit": "percent",
+            "displayUnit": null,
+            "decimals": 2,
             "suffix": "",
-            "unitCategory": "percentage"
+            "delimiter": false,
+            "cascade": null,
+            "added": 1746458190343
           }
         ]
       }
@@ -1060,41 +1071,21 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
+          "truncationMode": "middle",
           "categoricalBarChartSettings": {
-            "categoryAxis": [
-              "argocd.app.health.status"
-            ],
-            "categoryAxisLabel": "argocd.app.health.status",
             "valueAxis": [
               "count()"
             ],
-            "valueAxisLabel": "count()"
-          },
-          "categoryOverrides": {
-            "degraded": {
-              "added": 12013411.299999997,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-themed-fireplace-color-01-default, #ae132d)"
-              }
-            },
-            "healthy": {
-              "added": 12015872.899999999,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-color-03-default, #2a7453)"
-              }
-            },
-            "progressing": {
-              "added": 13356614.699999996,
-              "color": {
-                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
-              }
-            }
+            "valueAxisLabel": "count()",
+            "categoryAxis": [
+              "argocd.app.health.status"
+            ],
+            "categoryAxisLabel": "argocd.app.health.status"
           },
           "circleChartSettings": {
-            "groupingThresholdType": "relative",
-            "valueType": "relative"
-          },
-          "truncationMode": "middle"
+            "valueType": "relative",
+            "groupingThresholdType": "relative"
+          }
         },
         "coloring": {
           "colorRules": [
@@ -1136,13 +1127,12 @@
               "type": "string",
               "value": "progressing"
             }
-          ],
-          "thresholdRules": []
+          ]
         }
       }
     },
     "14": {
-      "content": "#### Share feedback \nWe welcome your feedback on this dashboard to help us improve and deliver a more effective observability solution, ensuring it provides maximum value to your software development lifecycle and delivery processes. Please post a comment here: [Feedback channel for CI/CD Pipeline Observability](https://community.dynatrace.com/t5/Platform-Engineering/Feedback-channel-for-CI-CD-Pipeline-Observability/m-p/269193/highlight/true#M1) (Dynatrace Community).\n#\n---\n\n#### Additional resources\n**Pipeline Observability**\n* [Observability throughout the software development lifecycle increases delivery performance](https://www.dynatrace.com/news/blog/observability-throughout-the-software-development-lifecycle/) (blog post)\n* [Concepts](https://docs.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/pipeline-observability-concepts) (docs)\n\n**Software Development Lifecycle Events**\n* [Ingest SDLC events](https://docs.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/sdlc-events) (docs)\n* [SDLC event specification](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/model/sdlc-events) (docs)\n#\n---\n\n#### About this dashboard\n\nRelease v0.2.0, [Origin](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples) ",
+      "content": "#### Share feedback \nWe welcome your feedback on this dashboard to help us improve and deliver a more effective observability solution, ensuring it provides maximum value to your software development lifecycle and delivery processes. Please post a comment here: [Feedback channel for CI/CD Pipeline Observability](https://community.dynatrace.com/t5/Platform-Engineering/Feedback-channel-for-CI-CD-Pipeline-Observability/m-p/269193/highlight/true#M1) (Dynatrace Community).\n#\n---\n\n#### Additional resources\n**Pipeline Observability**\n* [Observability throughout the software development lifecycle increases delivery performance](https://www.dynatrace.com/news/blog/observability-throughout-the-software-development-lifecycle/) (blog post)\n* [Concepts](https://docs.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/pipeline-observability-concepts) (docs)\n\n**Software Development Lifecycle Events**\n* [Ingest SDLC events](https://docs.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/sdlc-events) (docs)\n* [SDLC event specification](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/model/sdlc-events) (docs)\n#\n---\n\n#### About this dashboard\n\nRelease v0.2.0, [Origin](https://github.com/Dynatrace/community-examples/tree/main/configuration-as-code/argocd_observability). Extended by DPM International Inc.: version (image tag), deployed by, deployment history, source details and the Versions and Releases section ([DPM fork](https://github.com/dpm-jpmacalanda/dpm-examples/tree/main/configuration-as-code/argocd_observability)).",
       "type": "markdown"
     },
     "15": {
@@ -1160,7 +1150,7 @@
         },
         "enabled": false
       },
-      "query": "fetch events | filter event.provider == \"argocd\" \n| filter isNotNull(argocd.app.reconciliation.time)\n| filter event.status == \"finished\"\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project)\n| dedup {cicd.deployment.name, cicd.deployment.namespace, end_time, vcs.ref.base.revision}, sort:{argocd.app.reconciliation.time desc}\n| fields AppName= cicd.deployment.name, Namespace = cicd.deployment.namespace , Status = task.outcome , Health = argocd.app.health.status, SyncToRev = vcs.ref.base.revision, Duration = duration, Started = start_time, Ended = end_time, Message = argocd.sync.operation_state.outcome, Repository = vcs.repository.url.full, RepositoryRef = vcs.ref.base.name,Project = argocd.app.project.name, Server = cicd.deployment.server.url.full\n| sort Ended desc\n| limit 20\n\n",
+      "query": "fetch events | filter event.provider == \"argocd\" \n| filter isNotNull(argocd.app.reconciliation.time)\n| filter event.status == \"finished\"\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project)\n| dedup {cicd.deployment.name, cicd.deployment.namespace, end_time, vcs.ref.base.revision}, sort:{argocd.app.reconciliation.time desc}\n| fields AppName= cicd.deployment.name, Version = argocd.app.version, Namespace = cicd.deployment.namespace , Status = task.outcome , Health = argocd.app.health.status, DeployedBy = argocd.sync.initiated_by, DeploymentNo = argocd.app.deployment_count, SyncToRev = vcs.ref.base.revision, PreviousRev = vcs.ref.previous.revision, Image = argocd.app.image, Duration = duration, Started = start_time, Ended = end_time, Message = argocd.sync.operation_state.outcome, Repository = vcs.repository.url.full, RepositoryRef = vcs.ref.base.name,Project = argocd.app.project.name, Stage = argocd.app.stage, Parent = argocd.app.parent, ChartPath = argocd.app.source.path, AppURL = cicd.deployment.ingress.url, Resources = argocd.sync.resources, Server = cicd.deployment.server.url.full\n| sort Ended desc\n| limit 20\n\n",
       "querySettings": {
         "defaultSamplingRatio": 10,
         "defaultScanLimitGbytes": 500,
@@ -1179,7 +1169,22 @@
       "type": "data",
       "visualization": "table",
       "visualizationSettings": {
-        "autoSelectVisualization": false,
+        "table": {
+          "sortBy": [
+            {
+              "columnId": "[\"Message\"]",
+              "direction": "ascending"
+            }
+          ],
+          "columnWidths": {
+            "[\"AppName\"]": 119.7109375,
+            "[\"Ended\"]": 248.6875,
+            "[\"Server\"]": 636,
+            "[\"Started\"]": 231.6875,
+            "[\"Status\"]": 148.0859375,
+            "[\"SyncToRev\"]": 327.8671875
+          }
+        },
         "coloring": {
           "colorRules": [
             {
@@ -1247,23 +1252,7 @@
             }
           ]
         },
-        "table": {
-          "columnWidths": {
-            "[\"AppName\"]": 119.7109375,
-            "[\"Ended\"]": 248.6875,
-            "[\"Server\"]": 636,
-            "[\"Started\"]": 231.6875,
-            "[\"Status\"]": 148.0859375,
-            "[\"SyncToRev\"]": 327.8671875
-          },
-          "selectedColumnForRowThreshold": "Status",
-          "sortBy": [
-            {
-              "columnId": "[\"Message\"]",
-              "direction": "ascending"
-            }
-          ]
-        }
+        "autoSelectVisualization": false
       }
     },
     "20": {
@@ -1287,19 +1276,17 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
+          "truncationMode": "middle",
           "categoricalBarChartSettings": {
+            "categoryAxisLabel": "appName",
             "categoryAxis": [
               "appName"
             ],
-            "categoryAxisLabel": "appName",
             "valueAxis": [
               "deploymentDuration"
             ],
             "valueAxisLabel": "deploymentDuration"
-          },
-          "categoryOverrides": {},
-          "colorPalette": "swamps",
-          "truncationMode": "middle"
+          }
         },
         "coloring": {
           "colorRules": [
@@ -1311,8 +1298,7 @@
               "type": "string",
               "value": ""
             }
-          ],
-          "thresholdRules": []
+          ]
         }
       }
     },
@@ -1337,21 +1323,20 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
-          "colorPalette": "swamps",
-          "fieldMapping": {
-            "leftAxisValues": [
-              "duration"
-            ],
-            "timestamp": "timeframe"
-          },
+          "truncationMode": "middle",
+          "xAxisLabel": "timeframe",
+          "xAxisScaling": "analyzedTimeframe",
           "hiddenLegendFields": [
             "deployment",
             "interval",
             "avg(duration)"
           ],
-          "truncationMode": "middle",
-          "xAxisLabel": "timeframe",
-          "xAxisScaling": "analyzedTimeframe"
+          "fieldMapping": {
+            "leftAxisValues": [
+              "duration"
+            ],
+            "timestamp": "timeframe"
+          }
         },
         "coloring": {
           "colorRules": [
@@ -1363,19 +1348,19 @@
               "type": "string",
               "value": ""
             }
-          ],
-          "thresholdRules": []
+          ]
         },
         "unitsOverrides": [
           {
-            "added": 1746606983492,
-            "baseUnit": "nanosecond",
-            "decimals": 0,
-            "delimiter": false,
-            "displayUnit": null,
             "identifier": "duration",
+            "unitCategory": "time",
+            "baseUnit": "nanosecond",
+            "displayUnit": null,
+            "decimals": 0,
             "suffix": "",
-            "unitCategory": "time"
+            "delimiter": false,
+            "cascade": null,
+            "added": 1746606983492
           }
         ]
       }
@@ -1401,21 +1386,20 @@
       "visualizationSettings": {
         "autoSelectVisualization": false,
         "chartSettings": {
-          "colorPalette": "swamps",
-          "fieldMapping": {
-            "leftAxisValues": [
-              "count"
-            ],
-            "timestamp": "timeframe"
-          },
+          "truncationMode": "middle",
+          "xAxisLabel": "timeframe",
+          "xAxisScaling": "analyzedTimeframe",
           "hiddenLegendFields": [
             "deployment",
             "interval",
             "avg(duration)"
           ],
-          "truncationMode": "middle",
-          "xAxisLabel": "timeframe",
-          "xAxisScaling": "analyzedTimeframe"
+          "fieldMapping": {
+            "leftAxisValues": [
+              "count"
+            ],
+            "timestamp": "timeframe"
+          }
         },
         "coloring": {
           "colorRules": [
@@ -1427,19 +1411,19 @@
               "type": "string",
               "value": ""
             }
-          ],
-          "thresholdRules": []
+          ]
         },
         "unitsOverrides": [
           {
-            "added": 1746606983492,
-            "baseUnit": "nanosecond",
-            "decimals": 0,
-            "delimiter": false,
-            "displayUnit": null,
             "identifier": "duration",
+            "unitCategory": "time",
+            "baseUnit": "nanosecond",
+            "displayUnit": null,
+            "decimals": 0,
             "suffix": "",
-            "unitCategory": "time"
+            "delimiter": false,
+            "cascade": null,
+            "added": 1746606983492
           }
         ]
       }
@@ -1451,7 +1435,7 @@
         },
         "enabled": false
       },
-      "query": "fetch events \n| filter event.kind == \"SDLC_EVENT\" \n| filter event.category == \"task\" \n| filter event.type == \"deployment\"\n| filter event.status == \"finished\" \n| filter event.provider == \"argocd\"\n| filter task.outcome == \"failed\"\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project) \n| fieldsAdd prompt = concat(\"Explain the following Argo error message and also analyze the health status \", `argocd.sync.operation_state.outcome`), execute=true, contexts=array(record(type=\"supplementary\", value=substring(concat(\"Argo App Name: \", `argocd.app.name`, \"Argo Deployment Name: \", `cicd.deployment.name`, \"Argo Status: \", `argocd.sync.status`), to:20000)))\n| fields timestamp, argocd.app.name, argocd.sync.operation_state.outcome, prompt, execute, contexts",
+      "query": "fetch events \n| filter event.kind == \"SDLC_EVENT\" \n| filter event.category == \"task\" \n| filter event.type == \"deployment\"\n| filter event.status == \"finished\" \n| filter event.provider == \"argocd\"\n| filter task.outcome == \"failed\"\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project) \n| fieldsAdd prompt = concat(\"Explain the following Argo error message and also analyze the health status \", `argocd.sync.operation_state.outcome`), execute=true, contexts=array(record(type=\"supplementary\", value=substring(concat(\"Argo App Name: \", `argocd.app.name`, \"Argo Deployment Name: \", `cicd.deployment.name`, \"Argo Status: \", `argocd.sync.status`, \" Version: \", toString(`argocd.app.version`), \" Image: \", toString(`argocd.app.image`), \" Deployed by: \", toString(`argocd.sync.initiated_by`)), to:20000)))\n| fields timestamp, argocd.app.name, argocd.app.version, argocd.sync.initiated_by, argocd.sync.operation_state.outcome, prompt, execute, contexts",
       "querySettings": {
         "defaultSamplingRatio": 10,
         "defaultScanLimitGbytes": 500,
@@ -1463,7 +1447,36 @@
       "type": "data",
       "visualization": "table",
       "visualizationSettings": {
-        "autoSelectVisualization": false,
+        "table": {
+          "columnOrder": [
+            "[\"timestamp\"]",
+            "[\"argocd.app.name\"]",
+            "[\"argocd.app.version\"]",
+            "[\"argocd.sync.initiated_by\"]",
+            "[\"argocd.sync.operation_state.outcome\"]",
+            "[\"prompt\"]",
+            "[\"execute\"]",
+            "[\"contexts\"]"
+          ],
+          "hiddenColumns": [
+            [
+              "prompt"
+            ],
+            [
+              "execute"
+            ],
+            [
+              "contexts"
+            ]
+          ],
+          "columnWidths": {
+            "[\"argocd.app.name\"]": 140,
+            "[\"argocd.app.version\"]": 140,
+            "[\"argocd.sync.initiated_by\"]": 220,
+            "[\"argocd.sync.operation_state.outcome\"]": 900,
+            "[\"timestamp\"]": 180
+          }
+        },
         "coloring": {
           "colorRules": [
             {
@@ -1486,44 +1499,343 @@
             }
           ]
         },
+        "autoSelectVisualization": false,
+        "unitsOverrides": [
+          {
+            "identifier": "errorRate",
+            "unitCategory": "percentage",
+            "baseUnit": "percent",
+            "displayUnit": null,
+            "decimals": 2,
+            "suffix": "",
+            "delimiter": false,
+            "cascade": null,
+            "added": 1746458190343
+          }
+        ]
+      }
+    },
+    "30": {
+      "type": "markdown",
+      "content": "### Versions and Releases\n\nCurrent version (container image tag) of each application, who deployed it, apps waiting for promotion, and the version history. Versions come from the enriched Argo CD SDLC events (subscribed apps, events after the pipeline update); health and sync come from Argo CD metrics.\n\n---"
+    },
+    "31": {
+      "davis": {
+        "davisVisualization": {
+          "isAvailable": true
+        },
+        "enabled": false
+      },
+      "query": "fetch events\n| filter event.kind == \"SDLC_EVENT\" and event.provider == \"argocd\" and event.status == \"finished\"\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project)\n| sort timestamp desc\n| summarize {Version = takeFirst(argocd.app.version), Stage = takeFirst(argocd.app.stage), Status = takeFirst(task.outcome), LastDeployed = takeFirst(timestamp), DeployedBy = takeFirst(argocd.sync.initiated_by), SyncToRev = takeFirst(vcs.ref.base.revision), Image = takeFirst(argocd.app.image), Parent = takeFirst(argocd.app.parent), Owner = takeFirst(argocd.app.owner), AppURL = takeFirst(cicd.deployment.ingress.url)}, by: {AppName = cicd.deployment.name}\n| sort AppName asc",
+      "querySettings": {
+        "defaultSamplingRatio": 10,
+        "defaultScanLimitGbytes": 500,
+        "enableSampling": false,
+        "maxResultMegaBytes": 1,
+        "maxResultRecords": 1000
+      },
+      "title": "Current version per application",
+      "type": "data",
+      "visualization": "table",
+      "visualizationSettings": {
+        "autoSelectVisualization": false,
         "table": {
-          "columnOrder": [
-            "[\"timestamp\"]",
-            "[\"argocd.app.name\"]",
-            "[\"argocd.sync.operation_state.outcome\"]",
-            "[\"prompt\"]",
-            "[\"execute\"]",
-            "[\"contexts\"]"
-          ],
-          "columnWidths": {
-            "[\"argocd.app.name\"]": 127,
-            "[\"argocd.sync.operation_state.outcome\"]": 1278,
-            "[\"timestamp\"]": 180
-          },
-          "hiddenColumns": [
+          "rowDensity": "comfortable",
+          "monospacedFontColumns": [
             [
-              "prompt"
+              "Version"
             ],
             [
-              "execute"
-            ],
-            [
-              "contexts"
+              "SyncToRev"
             ]
           ]
         },
-        "unitsOverrides": [
-          {
-            "added": 1746458190343,
-            "baseUnit": "percent",
-            "decimals": 2,
-            "delimiter": false,
-            "displayUnit": null,
-            "identifier": "errorRate",
-            "suffix": "",
-            "unitCategory": "percentage"
+        "coloring": {
+          "colorRules": [
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-ideal-default, #2f6863)"
+              },
+              "field": "Status",
+              "value": "succeeded"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
+              },
+              "field": "Status",
+              "value": "failed"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
+              },
+              "field": "Status",
+              "value": "error"
+            }
+          ]
+        }
+      }
+    },
+    "32": {
+      "davis": {
+        "davisVisualization": {
+          "isAvailable": true
+        },
+        "enabled": false
+      },
+      "query": "timeseries v = avg(argocd_app_info), by: {Name = name, Health = health_status, Sync = sync_status, Namespace = dest_namespace, Project = project}, shift: -1m, interval: 1m\n| filter in(Name, $Application)\n| filter in(Namespace, $Namespace)\n| filter in(Project, $Project)\n| fieldsRemove v\n| lookup [ fetch events, from: now() - 90d\n  | filter event.kind == \"SDLC_EVENT\" and event.provider == \"argocd\" and event.status == \"finished\"\n  | filter in(cicd.deployment.name, $Application)\n  | filter in(cicd.deployment.namespace, $Namespace)\n  | filter in(argocd.app.project.name, $Project)\n  | sort timestamp desc\n  | summarize {Version = takeFirst(argocd.app.version), Stage = takeFirst(argocd.app.stage), Status = takeFirst(task.outcome), LastDeployed = takeFirst(timestamp), DeployedBy = takeFirst(argocd.sync.initiated_by), SyncToRev = takeFirst(vcs.ref.base.revision), Image = takeFirst(argocd.app.image), Parent = takeFirst(argocd.app.parent), Owner = takeFirst(argocd.app.owner), AppURL = takeFirst(cicd.deployment.ingress.url)}, by: {AppName = cicd.deployment.name}\n  ], sourceField: Name, lookupField: AppName, prefix: \"dep.\"\n| fields AppName = Name, Health, Sync, Version = coalesce(`dep.Version`, \"not subscribed\"), LastDeployed = `dep.LastDeployed`, Namespace, Project\n| sort AppName asc",
+      "querySettings": {
+        "defaultSamplingRatio": 10,
+        "defaultScanLimitGbytes": 500,
+        "enableSampling": false,
+        "maxResultMegaBytes": 1,
+        "maxResultRecords": 1000
+      },
+      "title": "All applications: health, sync and version",
+      "type": "data",
+      "visualization": "table",
+      "visualizationSettings": {
+        "autoSelectVisualization": false,
+        "table": {
+          "rowDensity": "default"
+        },
+        "coloring": {
+          "colorRules": [
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-ideal-default, #2f6863)"
+              },
+              "field": "Health",
+              "value": "Healthy"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
+              },
+              "field": "Health",
+              "value": "Progressing"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-01-default, #134fc9)"
+              },
+              "field": "Health",
+              "value": "Suspended"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
+              },
+              "field": "Health",
+              "value": "Degraded"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
+              },
+              "field": "Health",
+              "value": "Missing"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-ideal-default, #2f6863)"
+              },
+              "field": "Sync",
+              "value": "Synced"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-14-default, #d56b1a)"
+              },
+              "field": "Sync",
+              "value": "OutOfSync"
+            }
+          ]
+        }
+      },
+      "timeframe": {
+        "tileTimeframe": {
+          "from": "now()-1m",
+          "to": "now()"
+        },
+        "tileTimeframeEnabled": true
+      }
+    },
+    "33": {
+      "davis": {
+        "davisVisualization": {
+          "isAvailable": true
+        },
+        "enabled": false
+      },
+      "query": "timeseries v = avg(argocd_app_info), by: {Name = name, Health = health_status, Sync = sync_status, Namespace = dest_namespace, Project = project}, shift: -1m, interval: 1m\n| filter in(Name, $Application)\n| filter in(Namespace, $Namespace)\n| filter in(Project, $Project)\n| fieldsRemove v\n| filter Health == \"Suspended\"\n| fields AppName = Name, Health, Sync, Namespace, Project\n| sort AppName asc",
+      "querySettings": {
+        "defaultSamplingRatio": 10,
+        "defaultScanLimitGbytes": 500,
+        "enableSampling": false,
+        "maxResultMegaBytes": 1,
+        "maxResultRecords": 1000
+      },
+      "title": "Waiting for promotion (Suspended)",
+      "type": "data",
+      "visualization": "table",
+      "visualizationSettings": {
+        "autoSelectVisualization": false,
+        "table": {},
+        "coloring": {
+          "colorRules": [
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-categorical-color-01-default, #134fc9)"
+              },
+              "field": "Health",
+              "value": "Suspended"
+            }
+          ]
+        }
+      },
+      "timeframe": {
+        "tileTimeframe": {
+          "from": "now()-1m",
+          "to": "now()"
+        },
+        "tileTimeframeEnabled": true
+      }
+    },
+    "34": {
+      "davis": {
+        "davisVisualization": {
+          "isAvailable": true
+        },
+        "enabled": false
+      },
+      "query": "fetch events\n| filter event.kind == \"SDLC_EVENT\" and event.provider == \"argocd\" and event.status == \"finished\"\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project)\n| dedup vcs.ref.base.revision, start_time, cicd.deployment.name\n| summarize Deployments = count(), by: {DeployedBy = coalesce(argocd.sync.initiated_by, \"unknown\")}\n| sort Deployments desc",
+      "querySettings": {
+        "defaultSamplingRatio": 10,
+        "defaultScanLimitGbytes": 500,
+        "enableSampling": false,
+        "maxResultMegaBytes": 1,
+        "maxResultRecords": 1000
+      },
+      "title": "Deployments by initiator",
+      "type": "data",
+      "visualization": "categoricalBarChart",
+      "visualizationSettings": {
+        "autoSelectVisualization": false,
+        "chartSettings": {
+          "truncationMode": "middle",
+          "categoricalBarChartSettings": {
+            "categoryAxis": [
+              "DeployedBy"
+            ],
+            "categoryAxisLabel": "DeployedBy",
+            "valueAxis": [
+              "Deployments"
+            ],
+            "valueAxisLabel": "Deployments"
           }
-        ]
+        },
+        "coloring": {
+          "colorRules": [
+            {
+              "colorMode": "color-palette",
+              "colorPalette": "swamps",
+              "comparator": "= *value*",
+              "field": "DT.name",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        }
+      }
+    },
+    "35": {
+      "davis": {
+        "davisVisualization": {
+          "isAvailable": true
+        },
+        "enabled": false
+      },
+      "query": "fetch events\n| filter event.kind == \"SDLC_EVENT\" and event.provider == \"argocd\" and event.status == \"finished\"\n| filter in(cicd.deployment.name, $Application)\n| filter in(cicd.deployment.namespace, $Namespace)\n| filter in(argocd.app.project.name, $Project)\n| sort timestamp desc\n| fields Deployed = timestamp, AppName = cicd.deployment.name, Version = argocd.app.version, Status = task.outcome, DeployedBy = argocd.sync.initiated_by, DeploymentNo = argocd.app.deployment_count, SyncToRev = vcs.ref.base.revision, PreviousRev = vcs.ref.previous.revision, Duration = duration\n| limit 200",
+      "querySettings": {
+        "defaultSamplingRatio": 10,
+        "defaultScanLimitGbytes": 500,
+        "enableSampling": false,
+        "maxResultMegaBytes": 1,
+        "maxResultRecords": 1000
+      },
+      "title": "Version history",
+      "type": "data",
+      "visualization": "table",
+      "visualizationSettings": {
+        "autoSelectVisualization": false,
+        "table": {
+          "monospacedFontColumns": [
+            [
+              "Version"
+            ],
+            [
+              "SyncToRev"
+            ],
+            [
+              "PreviousRev"
+            ]
+          ]
+        },
+        "coloring": {
+          "colorRules": [
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-ideal-default, #2f6863)"
+              },
+              "field": "Status",
+              "value": "succeeded"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
+              },
+              "field": "Status",
+              "value": "failed"
+            },
+            {
+              "colorMode": "custom-color",
+              "comparator": "=",
+              "customColor": {
+                "Default": "var(--dt-colors-charts-status-critical-default, #c4233b)"
+              },
+              "field": "Status",
+              "value": "error"
+            }
+          ]
+        }
       }
     }
   },
@@ -1534,8 +1846,9 @@
       "key": "Application",
       "multiple": true,
       "type": "query",
-      "version": 2,
-      "visible": true
+      "version": 3,
+      "visible": true,
+      "name": "Application"
     },
     {
       "editable": true,
@@ -1543,8 +1856,9 @@
       "key": "Namespace",
       "multiple": true,
       "type": "query",
-      "version": 2,
-      "visible": true
+      "version": 3,
+      "visible": true,
+      "name": "Namespace"
     },
     {
       "editable": true,
@@ -1552,8 +1866,9 @@
       "key": "Project",
       "multiple": true,
       "type": "query",
-      "version": 2,
-      "visible": true
+      "version": 3,
+      "visible": true,
+      "name": "Project"
     }
   ],
   "version": 21
