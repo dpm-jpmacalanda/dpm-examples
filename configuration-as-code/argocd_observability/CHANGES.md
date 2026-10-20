@@ -69,6 +69,11 @@ Notes:
 
 The "ArgoCD Platform Observability" dashboard is unchanged.
 
+### 4. Documentation
+
+- `docs/Dynatrace_ArgoCD_Integration_Runbook_v2.1.html`: generic implementation runbook (no customer data), linked from the README
+- `README.md`: "DPM additions" section at the top; the original Dynatrace README follows unchanged
+
 ## Unchanged
 
 Pipeline ID, ingest source (`/platform/ingest/custom/events.sdlc/argocd`), the Platform Observability dashboard, manifest.

@@ -1,7 +1,55 @@
 # Observe your ArgoCD syncs with Dashboards and normalized SDLC events through OpenPipeline
 
-> **Fork note (DPM International Inc.):** this copy adds container image, version (image tag), owner, sync initiator, deployment history and source details to the Argo CD SDLC events, and accepts `name`/`environment` labels. See [CHANGES.md](./CHANGES.md).
+> **DPM International Inc. fork.** This folder extends the Dynatrace sample with richer Argo CD deployment events, an extended Lifecycle dashboard and an implementation runbook. Everything below the line "Excited to dive into…" is the original Dynatrace README. Full change list: [CHANGES.md](./CHANGES.md).
 
+## DPM additions
+
+### Implementation runbook
+
+| Document | Format | Download |
+|---|---|---|
+| Argo CD → Dynatrace Integration Runbook v2.1 (generic template: SDLC events, Argo CD metrics, enriched fields) | HTML, open in a browser | [**Download**](./docs/Dynatrace_ArgoCD_Integration_Runbook_v2.1.html?raw=true) · [View file](./docs/Dynatrace_ArgoCD_Integration_Runbook_v2.1.html) |
+
+Save the file and open it in a browser. GitHub shows HTML files as source code, so use **Download**.
+
+### Enriched SDLC events
+
+The "ArgoCD Application" OpenPipeline pipeline (`pipeline_argocd_application_v2`) runs three processors: the upstream properties processor, a new **Enrich Argo CD event** processor, and the upstream Clean up (which must stay last). New or filled fields:
+
+| Field | Meaning |
+|---|---|
+| `argocd.app.version` | Deployed version: the container image tag (e.g. `dev-6cc3ce6`) |
+| `argocd.app.image`, `argocd.app.image.tag`, `argocd.app.images` | Application image, its tag, and all images (the Dynatrace OneAgent injection image is skipped) |
+| `argocd.app.name`, `argocd.app.stage` | From labels `app`/`stage`, or `name`/`environment` |
+| `argocd.app.owner` | Label `owner`, else the Argo CD project |
+| `argocd.sync.initiated_by` | Argo CD user who started the sync, or `automated` (stores a user name, often an e-mail) |
+| `argocd.app.deployment_count`, `vcs.ref.previous.revision` | Deployment number and the previously deployed Git revision |
+| `cicd.deployment.ingress.url` | Application URL |
+| `argocd.app.source.path`, `argocd.app.source.type`, `argocd.app.helm.release`, `argocd.app.helm.value_files` | Where the deployed manifests come from |
+| `argocd.app.parent` | Parent application (app-of-apps) |
+| `argocd.sync.auto`, `argocd.sync.self_heal`, `argocd.sync.prune`, `argocd.sync.retry_limit` | Sync policy |
+| `argocd.sync.resources` | Kubernetes objects applied by the sync (`Kind/name`) |
+| `argocd.app.health.since`, `argocd.app.created` | Health-state start time and Application creation time |
+| `vcs.ref.base.name`, `vcs.repository.url.full` | Now also filled on "started" events |
+
+### Dashboard
+
+**ArgoCD Application Lifecycle** shows Version and DeployedBy in the sync tables, passes version and initiator to the CoPilot failure analysis, and has a new **Versions and Releases** section: current version per application, all applications with health/sync/version, apps waiting for promotion (Suspended), deployments by initiator, and version history. **ArgoCD Platform Observability** is unchanged.
+
+### Deploy or update
+
+```
+git clone https://github.com/dpm-jpmacalanda/dpm-examples.git
+cd dpm-examples/configuration-as-code/argocd_observability
+# set your environment in manifest.yaml, then:
+export DYNATRACE_PLATFORM_TOKEN=<platform token>
+monaco deploy --dry-run manifest.yaml
+monaco deploy manifest.yaml
+```
+
+Over an existing deployment of the Dynatrace sample, deploy directly; do not undeploy first. Monaco matches the existing objects by project name and config IDs (keep them unchanged) and updates them in place. Processors edited by hand in the UI and both dashboards are replaced. Token scopes and all other steps: see the runbook.
+
+---
 
 Excited to dive into your ArgoCD sync activities and deployment states of your ArgoCD applications? For this use case, you'll
 
