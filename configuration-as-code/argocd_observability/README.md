@@ -1,5 +1,8 @@
 # Observe your ArgoCD syncs with Dashboards and normalized SDLC events through OpenPipeline
 
+> **Fork note (DPM International Inc.):** this copy adds container image and image tag fields to the Argo CD SDLC events and accepts `name`/`environment` labels. See [CHANGES.md](./CHANGES.md).
+
+
 Excited to dive into your ArgoCD sync activities and deployment states of your ArgoCD applications? For this use case, you'll
 
 * Integrate ArgoCD and Dynatrace.
