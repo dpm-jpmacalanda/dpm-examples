@@ -26,3 +26,17 @@ configs:
     document:
       kind: dashboard
       private: false
+
+#
+# Dashboard: current version per Argo CD application (DPM addition)
+# Needs the enriched SDLC event fields (argocd.app.version) and Argo CD metrics
+#
+- id: argocd_app_versions
+  config:
+    name: ArgoCD Applications and Versions
+    template: argocd_app_versions.json
+    skip: false
+  type:
+    document:
+      kind: dashboard
+      private: false
